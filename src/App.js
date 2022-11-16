@@ -31,8 +31,6 @@ function App() {
   const [dateValue1, setDateValue1] = useState();
   const [dateValue2, setDateValue2] = useState();
 
-  
-
 
   return (
     <StrictMode>
@@ -51,8 +49,6 @@ function App() {
             valueID={valueID}
             dateValue1={dateValue1}
             dateValue2={dateValue2}
-
-
           />
 
         </div>

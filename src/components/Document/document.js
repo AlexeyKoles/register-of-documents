@@ -18,11 +18,6 @@ const Document = (props) => {
                 </div>
             </details>
         </li>
-
-
-
-
-
     )
 }
 
