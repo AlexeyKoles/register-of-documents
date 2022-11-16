@@ -1,0 +1,51 @@
+.documentListItem {
+    list-style-type: none;
+}
+
+.details {
+    background-color: #d2e8b9;
+    border: 1.5px solid;
+    border-color: #d2e8b9;
+    border-radius: 5px;
+    width: 870px;
+    margin: 10px;
+}
+
+.summary {
+    font-size: 15px;
+    padding: 15px;
+    font-weight: 500;
+}
+
+.document {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    text-align: center;
+    font-size: 15px;
+}
+
+.organization {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.purpose {
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+.date-document {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.text-document {
+    margin-top: 30px;
+    padding: 20px;
+}

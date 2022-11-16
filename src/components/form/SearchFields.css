@@ -1,0 +1,44 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    width: 338px;
+}
+
+.iii {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.wide-input {
+    margin-top: 7px;
+    width: 330px;
+    height: 30px;
+    border: 2px solid;
+    border-color: #cdcdcd;
+    border-radius: 5px;
+}
+
+.narrow-input {
+    margin-top: 7px;
+    width: 145px;
+    height: 30px;
+    border: 2px solid;
+    border-color: #cdcdcd;
+    border-radius: 5px;
+}
+.sort{
+    margin-top: 7px;
+    width: 153px;
+    height: 36px;
+    border: 2px solid;
+    border-color: #cdcdcd;
+    border-radius: 5px;
+}
+
+p {
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-weight: 500;
+}
