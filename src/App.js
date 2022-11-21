@@ -30,6 +30,8 @@ function App() {
   const [valueName, setValueName] = useState("");
   const [dateValue1, setDateValue1] = useState();
   const [dateValue2, setDateValue2] = useState();
+  console.log(dateValue1)
+  console.log(dateValue2)
 
 
   return (
