@@ -5,13 +5,13 @@
     width: 338px;
 }
 
-.iii {
+.dataAndSort {
     display: flex;
     flex-direction: row;
     justify-content: space-between
 }
 
-.wide-input {
+.idAndNameInput{
     margin-top: 7px;
     width: 330px;
     height: 30px;

@@ -3,19 +3,18 @@ import React from 'react';
 
 const ListDocument = (props) => {
 
-    const filterName = props.data.filter(item => {
+    const filterArray = props.data.filter(item => {
 
+        //поиск по названию
         if (props.valueName) {
             return item.name.includes(props.valueName)
         }
+        //поиск по ID
         if (props.valueID) {
             return item.id.includes(props.valueID)
         }
+        //поиск по датам
         if (props.dateValue1 && props.dateValue2) {
-
-            if (props.dateValue2 < props.dateValue1) {
-                return item
-            }
 
             if (isNaN(props.dateValue1) || isNaN(props.dateValue2)) {
                 return item
@@ -26,13 +25,27 @@ const ListDocument = (props) => {
                 }
             }
         }
-
         else return item
 
         return false
     });
 
-    const elemets = filterName.map((item, index) => {
+    //сортировка
+    if (props.sortValue1 === "По идентификатору" && props.sortValue2 === "По возрастанию") {
+        filterArray.sort((item1, item2) => item1.id - item2.id);
+    }
+    if (props.sortValue1 === "По идентификатору" && props.sortValue2 === "По убыванию") {
+        filterArray.sort((item1, item2) => item2.id - item1.id);
+    }
+
+    if (props.sortValue1 === "Создан" && props.sortValue2 === "По возрастанию") {
+        filterArray.sort((item1, item2) => item1.date - item2.date);
+    }
+    if (props.sortValue1 === "Создан" && props.sortValue2 === "По убыванию") {
+        filterArray.sort((item1, item2) => item2.date - item1.date);
+    }
+
+    const elemets = filterArray.map((item, index) => {
         return (
             <Document
                 name={item.name}
@@ -48,7 +61,6 @@ const ListDocument = (props) => {
             {elemets}
         </ul>
     )
-
 }
 
 export default ListDocument;
