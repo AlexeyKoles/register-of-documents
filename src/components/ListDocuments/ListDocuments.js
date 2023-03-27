@@ -3,7 +3,7 @@ import React from 'react';
 
 const ListDocument = (props) => {
 
-    const filterArray = props.data.filter(item => {
+    const filterArray = props.currentDocument.filter(item => {
 
         //поиск по названию
         if (props.valueName) {

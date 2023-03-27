@@ -2,6 +2,7 @@ import './App.css';
 import React, { StrictMode } from 'react';
 import SearchFields from './components/form/SearchFields';
 import ListDocument from './components/ListDocuments/ListDocuments';
+import Pagination from './components/Pagination/Pagination';
 import { useState } from "react";
 
 
@@ -31,7 +32,14 @@ function App() {
   const [dateValue2, setDateValue2] = useState();
   const [sortValue1, setSortValue1] = useState("");
   const [sortValue2, setSortValue2] = useState("");
-  
+  const [documentPage, setDocumentPage] = useState(1);
+  const [documentPerPage] = useState(6);
+
+  const lastDocumentIndex = documentPage * documentPerPage;
+  const firstDocumentIndex = lastDocumentIndex - documentPerPage;
+  const currentDocument = data.slice(firstDocumentIndex, lastDocumentIndex);
+  const paginate = pageNumber => setDocumentPage(pageNumber);
+
 
   return (
     <StrictMode>
@@ -46,7 +54,8 @@ function App() {
             sortValue1={(e) => setSortValue1(e.target.value)}
             sortValue2={(e) => setSortValue2(e.target.value)}
           />
-          <ListDocument data={data}
+          <ListDocument
+            currentDocument={currentDocument}
             valueName={valueName}
             valueID={valueID}
             dateValue1={dateValue1}
@@ -54,8 +63,12 @@ function App() {
             sortValue1={sortValue1}
             sortValue2={sortValue2}
           />
-
         </div>
+        <Pagination
+          documentPerPage={documentPerPage}
+          totalDocument={data.length}
+          paginate={paginate}
+        />
       </div>
     </StrictMode>
   );
