@@ -35,11 +35,13 @@ function App() {
   const [documentPage, setDocumentPage] = useState(1);
   const [documentPerPage] = useState(6);
 
+  
+  //пагинация//
   const lastDocumentIndex = documentPage * documentPerPage;
   const firstDocumentIndex = lastDocumentIndex - documentPerPage;
   const currentDocument = data.slice(firstDocumentIndex, lastDocumentIndex);
   const paginate = pageNumber => setDocumentPage(pageNumber);
-
+  //
 
   return (
     <StrictMode>
@@ -56,6 +58,7 @@ function App() {
           />
           <ListDocument
             currentDocument={currentDocument}
+            data={data}
             valueName={valueName}
             valueID={valueID}
             dateValue1={dateValue1}
